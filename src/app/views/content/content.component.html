@@ -1,0 +1,39 @@
+<div class="content-box">
+  <h1>Ты находишься в {{title}}</h1>
+  <div class="form">
+    <!-- у "create($event," - event запрашиваем у angular, чтобы запретить передавать данные после submit(остаёмся на своей странице) -->
+    <!-- create - функция куда мы будем передавать значение смотри в файле content.component.ts -->
+    <!-- valueInput.value='' - чистит форму после отправки данных в массив -->
+    <form (click)="create($event, valueInput.value); valueInput.value='';"> <!-- Отслеживаем submit в форме, передаём значение поля ЛОКАЛЬНО - valueInput -->
+
+      <label>
+        <input type="text" placeholder="Форма пуста, заполните" #valueInput>  <!-- Значение поля - Локальное, внутри формы -->
+        Ввели:
+        <span>{{valueInput.value}}</span>
+      </label>
+      <label>
+        <input type="text" placeholder="Форма пуста, заполните" #valueInput_1>
+        Ввели:
+        <span>{{valueInput_1.value}}</span>
+      </label>
+      <label>
+        <input type="text" placeholder="Форма пуста, заполните" #valueInput_2>
+        Ввели:
+        <span>{{valueInput_2.value}}</span>
+      </label>
+      <label>
+        <input type="text" placeholder="Форма пуста, заполните" #valueInput_3>
+        Ввели:
+        <span>{{valueInput_3.value}}</span>
+      </label>
+      <label>
+        <input type="text" placeholder="Форма пуста, заполните" #valueInput_4>
+        Ввели:
+        <span>{{valueInput_4.value}}</span>
+      </label>
+      <div class="status-form">
+        <button>Отправить</button>
+      </div>
+    </form>
+  </div>
+</div>
